@@ -66,17 +66,19 @@ export async function POST(request: Request) {
 
     let emailDelivered = false;
     let deliveryMethod = 'logged';
+    let deliveryNotes = '';
 
     // 1. Direct Nodemailer SMTP delivery (e.g. Gmail App Password)
     if (smtpPass) {
       try {
+        const cleanPass = smtpPass.trim().replace(/\s+/g, '');
         const transporter = nodemailer.createTransport({
           host: smtpHost,
           port: smtpPort,
           secure: smtpPort === 465,
           auth: {
             user: smtpUser,
-            pass: smtpPass,
+            pass: cleanPass,
           },
         });
 
@@ -115,8 +117,13 @@ export async function POST(request: Request) {
 
         emailDelivered = true;
         deliveryMethod = 'smtp';
-      } catch (smtpErr) {
-        console.error('[SMTP_SEND_FAILED]', smtpErr);
+      } catch (smtpErr: any) {
+        console.error('[SMTP_SEND_FAILED]', smtpErr?.message || smtpErr);
+        if (smtpErr?.message?.includes('Application-specific password') || smtpErr?.message?.includes('534')) {
+          deliveryNotes = 'Google requires a 16-character App Password (https://myaccount.google.com/apppasswords) rather than your standard login password.';
+        } else {
+          deliveryNotes = smtpErr?.message || 'SMTP delivery issue';
+        }
       }
     }
 
@@ -139,6 +146,7 @@ export async function POST(request: Request) {
         if (w3fRes.ok) {
           emailDelivered = true;
           deliveryMethod = 'web3forms';
+          deliveryNotes = '';
         }
       } catch (w3fErr) {
         console.error('[WEB3FORMS_SEND_FAILED]', w3fErr);
@@ -148,12 +156,15 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         success: true,
-        message: 'Your inquiry has been successfully transmitted and processed.',
+        message: emailDelivered
+          ? 'Your inquiry has been successfully transmitted and dispatched to Syed Umair Shah.'
+          : 'Your inquiry has been successfully transmitted and logged.',
         submissionId,
         receivedAt,
         delivered: emailDelivered,
         deliveryMethod,
         targetEmail: targetRecipient,
+        ...(deliveryNotes ? { note: deliveryNotes } : {}),
       },
       { status: 200 }
     );

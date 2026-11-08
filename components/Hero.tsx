@@ -189,8 +189,11 @@ export default function Hero() {
                 <div className="relative my-6 aspect-square rounded-2xl overflow-hidden glass-panel border border-white/10 flex flex-col items-center justify-center bg-gradient-to-br from-navy-900 via-navy-850 to-slate-950 group">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/portfolio-image.png"
+                    src="/profile.png"
                     alt={PERSONAL_INFO.name}
+                    onError={(e) => {
+                      (e.target as HTMLImageElement).src = '/profile';
+                    }}
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#040711] via-transparent to-transparent" />

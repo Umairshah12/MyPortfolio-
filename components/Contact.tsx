@@ -36,6 +36,7 @@ export default function Contact() {
     type: 'idle' | 'success' | 'error';
     message: string;
     submissionId?: string;
+    note?: string;
   }>({ type: 'idle', message: '' });
 
   const [copiedEmail, setCopiedEmail] = useState(false);
@@ -72,6 +73,7 @@ export default function Contact() {
           type: 'success',
           message: data.message || 'Message transmitted successfully!',
           submissionId: data.submissionId,
+          note: data.note,
         });
         setFormData({
           name: '',
@@ -367,6 +369,11 @@ export default function Contact() {
                         {status.submissionId && (
                           <div className="mt-1 font-mono text-[10px] text-emerald-400/80">
                             Receipt ID: {status.submissionId}
+                          </div>
+                        )}
+                        {status.note && (
+                          <div className="mt-2 text-[11px] text-amber-300/90 leading-relaxed bg-amber-950/40 p-2.5 rounded-lg border border-amber-500/30">
+                            {status.note}
                           </div>
                         )}
                       </div>
