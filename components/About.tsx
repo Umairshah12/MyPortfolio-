@@ -27,7 +27,7 @@ const PILLARS = [
     icon: Code2,
     title: 'Software & Web Engineering',
     description:
-      'Developing responsive full-stack applications with React, Next.js, TypeScript, C#, and relational SQL databases.',
+      'Developing responsive full-stack applications with React, Next.js, TypeScript, C++, and relational SQL databases.',
   },
   {
     icon: Network,
@@ -82,11 +82,14 @@ export default function About() {
             {/* Visual Headshot / ID Frame */}
             <div className="relative rounded-3xl glass-card p-6 border border-white/10 overflow-hidden shadow-2xl">
               <div className="relative aspect-[4/5] rounded-2xl overflow-hidden glass-panel border border-white/10 bg-gradient-to-br from-slate-900 via-navy-900 to-slate-950 group">
-                {/* Real User Profile Picture */}
+                {/* User Portfolio Picture */}
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src="/profile.png"
+                  src="/portfolio-image.png"
                   alt={PERSONAL_INFO.name}
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).src = '/Portfolio image.png';
+                  }}
                   className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#040711] via-[#040711]/25 to-transparent" />
@@ -106,7 +109,7 @@ export default function About() {
                     IT Support Specialist • Software Developer
                   </p>
                   <div className="mt-2 pt-2 border-t border-white/10 flex items-center justify-between text-[10px] text-slate-300 font-mono">
-                    <span>Dubai, UAE</span>
+                    <span>Islamabad, Pakistan</span>
                     <span>Etihad &amp; DXB Ops</span>
                   </div>
                 </div>

@@ -68,7 +68,7 @@ export default function Hero() {
               <span className="text-slate-600">•</span>
               <span className="text-xs text-slate-400 flex items-center">
                 <MapPin className="w-3 h-3 mr-1 text-cyan-400" />
-                Dubai, UAE
+                Islamabad, Pakistan
               </span>
             </div>
 
@@ -189,7 +189,7 @@ export default function Hero() {
                 <div className="relative my-6 aspect-square rounded-2xl overflow-hidden glass-panel border border-white/10 flex flex-col items-center justify-center bg-gradient-to-br from-navy-900 via-navy-850 to-slate-950 group">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
                   <img
-                    src="/profile.png"
+                    src="/portfolio-image.png"
                     alt={PERSONAL_INFO.name}
                     className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
                   />
@@ -218,7 +218,7 @@ export default function Hero() {
                     </div>
                     <div>
                       <div className="text-xs font-semibold text-white">Full-Stack & IT</div>
-                      <div className="text-[10px] text-slate-400">React • C# • AD • M365</div>
+                      <div className="text-[10px] text-slate-400">React • C++ • AD • M365</div>
                     </div>
                   </div>
 

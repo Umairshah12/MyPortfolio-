@@ -26,11 +26,11 @@ export const PERSONAL_INFO = {
     'In IT support and software engineering, I specialize in resolving complex system issues, deploying robust web applications with modern stacks like React and Next.js, scripting enterprise workflows, and managing directory and cloud services (Microsoft 365, Active Directory).',
     'In international aviation hubs including Dubai International Airport (DXB) and Etihad Airways, I have managed critical passenger check-in, boarding operations, transfer coordination, and VIP Al Majlis service—cultivating composure under pressure, precision logistics, and empathetic communication.',
   ],
-  location: 'Dubai, United Arab Emirates',
-  locationDetails: 'Open to on-site, hybrid & international relocation opportunities',
+  location: 'Islamabad, Pakistan',
+  locationDetails: 'Federal Capital, Pakistan • Available for Remote, Hybrid & Relocation Roles',
   availability: 'Available for Immediate Engagement',
   email: 'syedumairshah763@gmail.com',
-  phone: '+971 50 000 0000',
+  phone: '+92 313 9837430',
   cvPath: '/resume.pdf',
 };
 
@@ -62,7 +62,7 @@ export const TECHNICAL_SKILLS: Skill[] = [
   { name: 'JavaScript', category: 'development', icon: 'FileCode', level: 'Advanced', highlight: true, context: 'ES6+, async architectures & DOM manipulation' },
   { name: 'HTML5', category: 'development', icon: 'Globe', level: 'Advanced', context: 'Semantic markup, accessibility & SEO best practices' },
   { name: 'CSS3 / Tailwind', category: 'development', icon: 'Palette', level: 'Advanced', context: 'Responsive design, animations & modern utility CSS' },
-  { name: 'C#', category: 'development', icon: 'Cpu', level: 'Proficient', highlight: true, context: '.NET runtime, object-oriented desktop & API logic' },
+  { name: 'C++', category: 'development', icon: 'Cpu', level: 'Proficient', highlight: true, context: 'Object-oriented programming, data structures, algorithms & high-performance logic' },
   { name: 'SQL', category: 'development', icon: 'Database', level: 'Proficient', context: 'Relational schema design, queries, joins & optimization' },
   
   // Systems & IT Infrastructure
@@ -158,7 +158,7 @@ export const EXPERIENCES: ExperienceItem[] = [
       'Delivered dual-track value by providing Tier 1/2 enterprise IT support, maintaining infrastructure uptime, and building custom software solutions for business clients.',
     keyResponsibilities: [
       'Delivered responsive technical support across hardware, operating systems (Windows & Linux), network appliances, and productivity software suites.',
-      'Engineered and maintained internal web modules and database-driven software applications using modern front-end frameworks, C#, and SQL.',
+      'Engineered and maintained internal software modules and database-driven applications using modern frameworks, C++, and SQL.',
       'Administered enterprise Active Directory domains, provisioning user accounts, assigning role-based security permissions, and managing Group Policy Objects (GPOs).',
       'Conducted on-site and remote hardware diagnostics, repairing motherboard components, diagnosing network drops, and configuring managed switches.',
       'Implemented automated IT asset management systems and maintained detailed incident documentation to uphold SLA compliance.',
@@ -168,7 +168,7 @@ export const EXPERIENCES: ExperienceItem[] = [
       'Developed custom client-facing web portals resulting in smoother client communication and automated reporting.',
     ],
     skillsApplied: [
-      'Software Development (C#, JS, SQL)',
+      'Software Development (C++, JS, SQL)',
       'Active Directory & Windows Administration',
       'Network Configuration & Troubleshooting',
       'IT Asset Management',

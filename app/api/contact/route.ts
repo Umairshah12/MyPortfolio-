@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import nodemailer from 'nodemailer';
 
 export async function POST(request: Request) {
   try {
@@ -43,24 +44,116 @@ export async function POST(request: Request) {
       );
     }
 
+    const targetRecipient = process.env.CONTACT_RECEIVER_EMAIL || 'syedumairshah763@gmail.com';
+    const submissionId = `MSG-${Date.now()}-${Math.random().toString(36).substring(2, 7).toUpperCase()}`;
+    const receivedAt = new Date().toISOString();
+
     const sanitizedData = {
       name: name.trim(),
       email: email.trim().toLowerCase(),
       subject: subject.trim(),
       message: message.trim(),
-      receivedAt: new Date().toISOString(),
-      submissionId: `MSG-${Date.now()}-${Math.random().toString(36).substring(2, 7).toUpperCase()}`,
+      receivedAt,
+      submissionId,
     };
 
-    // Log the message on the server (In a production environment, this connects to Resend, SendGrid, or AWS SES)
-    console.log('[PORTFOLIO_CONTACT_DISPATCH]', JSON.stringify(sanitizedData, null, 2));
+    console.log('[PORTFOLIO_CONTACT_DISPATCH]', sanitizedData);
+
+    const smtpHost = process.env.SMTP_HOST || 'smtp.gmail.com';
+    const smtpPort = parseInt(process.env.SMTP_PORT || '465', 10);
+    const smtpUser = process.env.SMTP_USER || process.env.GMAIL_USER || 'syedumairshah763@gmail.com';
+    const smtpPass = process.env.SMTP_PASS || process.env.GMAIL_APP_PASSWORD;
+
+    let emailDelivered = false;
+    let deliveryMethod = 'logged';
+
+    // 1. Direct Nodemailer SMTP delivery (e.g. Gmail App Password)
+    if (smtpPass) {
+      try {
+        const transporter = nodemailer.createTransport({
+          host: smtpHost,
+          port: smtpPort,
+          secure: smtpPort === 465,
+          auth: {
+            user: smtpUser,
+            pass: smtpPass,
+          },
+        });
+
+        const htmlContent = `
+          <div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; max-width: 600px; margin: 0 auto; background: #030712; color: #f8fafc; border-radius: 16px; border: 1px solid rgba(255, 255, 255, 0.1); overflow: hidden; padding: 24px;">
+            <div style="border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 16px; margin-bottom: 20px;">
+              <h2 style="color: #00f2fe; margin: 0; font-size: 20px; font-weight: 700;">New Portfolio Inquiry Transmission</h2>
+              <p style="color: #94a3b8; font-size: 12px; margin: 4px 0 0 0;">Received via syedumairshah.dev | ID: ${submissionId}</p>
+            </div>
+            
+            <div style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 12px; padding: 16px; margin-bottom: 20px;">
+              <p style="margin: 0 0 8px 0; font-size: 14px;"><strong style="color: #00f2fe;">From:</strong> ${sanitizedData.name} (&lt;<a href="mailto:${sanitizedData.email}" style="color: #38bdf8;">${sanitizedData.email}</a>&gt;)</p>
+              <p style="margin: 0 0 8px 0; font-size: 14px;"><strong style="color: #00f2fe;">Subject:</strong> ${sanitizedData.subject}</p>
+              <p style="margin: 0; font-size: 12px; color: #64748b;"><strong style="color: #94a3b8;">Timestamp:</strong> ${new Date(receivedAt).toUTCString()}</p>
+            </div>
+
+            <div style="background: rgba(255, 255, 255, 0.02); border-left: 3px solid #00f2fe; padding: 16px; border-radius: 4px; margin-bottom: 20px;">
+              <h4 style="margin: 0 0 8px 0; font-size: 12px; text-transform: uppercase; letter-spacing: 1px; color: #94a3b8;">Message:</h4>
+              <p style="margin: 0; font-size: 14px; line-height: 1.6; color: #e2e8f0; white-space: pre-wrap;">${sanitizedData.message}</p>
+            </div>
+
+            <div style="text-align: center; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 16px;">
+              <a href="mailto:${sanitizedData.email}?subject=Re: ${encodeURIComponent(sanitizedData.subject)}" style="background: linear-gradient(to right, #00f2fe, #38bdf8); color: #000; font-weight: 600; padding: 10px 20px; border-radius: 8px; text-decoration: none; display: inline-block; font-size: 13px;">Reply to ${sanitizedData.name}</a>
+            </div>
+          </div>
+        `;
+
+        await transporter.sendMail({
+          from: `"Portfolio Contact Form" <${smtpUser}>`,
+          to: targetRecipient,
+          replyTo: sanitizedData.email,
+          subject: `[Portfolio Inquiry] ${sanitizedData.subject} (${sanitizedData.name})`,
+          text: `New Portfolio Inquiry:\n\nFrom: ${sanitizedData.name} <${sanitizedData.email}>\nSubject: ${sanitizedData.subject}\nTimestamp: ${receivedAt}\n\nMessage:\n${sanitizedData.message}\n\nSubmission ID: ${submissionId}`,
+          html: htmlContent,
+        });
+
+        emailDelivered = true;
+        deliveryMethod = 'smtp';
+      } catch (smtpErr) {
+        console.error('[SMTP_SEND_FAILED]', smtpErr);
+      }
+    }
+
+    // 2. Web3Forms fallback if access key is present
+    const web3formsKey = process.env.WEB3FORMS_ACCESS_KEY;
+    if (!emailDelivered && web3formsKey) {
+      try {
+        const w3fRes = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            access_key: web3formsKey,
+            name: sanitizedData.name,
+            email: sanitizedData.email,
+            subject: `[Portfolio Inquiry] ${sanitizedData.subject}`,
+            message: sanitizedData.message,
+            to_email: targetRecipient,
+          }),
+        });
+        if (w3fRes.ok) {
+          emailDelivered = true;
+          deliveryMethod = 'web3forms';
+        }
+      } catch (w3fErr) {
+        console.error('[WEB3FORMS_SEND_FAILED]', w3fErr);
+      }
+    }
 
     return NextResponse.json(
       {
         success: true,
-        message: 'Your inquiry has been successfully transmitted and logged.',
-        submissionId: sanitizedData.submissionId,
-        receivedAt: sanitizedData.receivedAt,
+        message: 'Your inquiry has been successfully transmitted and processed.',
+        submissionId,
+        receivedAt,
+        delivered: emailDelivered,
+        deliveryMethod,
+        targetEmail: targetRecipient,
       },
       { status: 200 }
     );
@@ -69,10 +162,9 @@ export async function POST(request: Request) {
     return NextResponse.json(
       {
         success: false,
-        error: 'An internal error occurred while processing your message. Please try again or email directly.',
+        error: 'An internal error occurred while processing your message. Please reach out directly to syedumairshah763@gmail.com or +92 313 9837430.',
       },
       { status: 500 }
     );
   }
 }
-

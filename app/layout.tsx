@@ -80,14 +80,14 @@ export default function RootLayout({
     url: 'https://syedumairshah.dev',
     address: {
       '@type': 'PostalAddress',
-      addressLocality: 'Dubai',
-      addressCountry: 'AE',
+      addressLocality: 'Islamabad',
+      addressCountry: 'PK',
     },
     knowsAbout: [
       'IT Support',
       'React.js',
       'Next.js',
-      'C#',
+      'C++',
       'Active Directory',
       'Microsoft 365',
       'Airport Operations',

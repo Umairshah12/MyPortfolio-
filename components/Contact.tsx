@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import {
   Mail,
+  Phone,
   Send,
   Linkedin,
   Github,
@@ -38,11 +39,18 @@ export default function Contact() {
   }>({ type: 'idle', message: '' });
 
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [copiedPhone, setCopiedPhone] = useState(false);
 
   const handleCopyEmail = () => {
     navigator.clipboard.writeText(PERSONAL_INFO.email);
     setCopiedEmail(true);
     setTimeout(() => setCopiedEmail(false), 2000);
+  };
+
+  const handleCopyPhone = () => {
+    navigator.clipboard.writeText(PERSONAL_INFO.phone);
+    setCopiedPhone(true);
+    setTimeout(() => setCopiedPhone(false), 2000);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -152,6 +160,36 @@ export default function Contact() {
                   aria-label="Copy email"
                 >
                   {copiedEmail ? (
+                    <Check className="w-4 h-4 text-emerald-400" />
+                  ) : (
+                    <Copy className="w-4 h-4" />
+                  )}
+                </button>
+              </div>
+
+              {/* Phone number box */}
+              <div className="p-4 rounded-2xl glass-panel border border-white/5 flex items-center justify-between">
+                <div className="flex items-center space-x-3 truncate">
+                  <div className="p-2 rounded-xl bg-emerald-500/10 text-emerald-400 flex-shrink-0">
+                    <Phone className="w-5 h-5" />
+                  </div>
+                  <div className="truncate">
+                    <div className="text-[10px] font-mono text-slate-400 uppercase">Direct Line &amp; WhatsApp</div>
+                    <a
+                      href={`tel:${PERSONAL_INFO.phone.replace(/[\s+]/g, '')}`}
+                      className="text-xs sm:text-sm font-semibold text-white hover:text-emerald-400 transition-colors truncate block"
+                    >
+                      {PERSONAL_INFO.phone}
+                    </a>
+                  </div>
+                </div>
+                <button
+                  onClick={handleCopyPhone}
+                  className="p-2 rounded-xl glass-panel text-slate-400 hover:text-white border border-white/10 transition-colors ml-2 flex-shrink-0"
+                  title="Copy contact number"
+                  aria-label="Copy phone"
+                >
+                  {copiedPhone ? (
                     <Check className="w-4 h-4 text-emerald-400" />
                   ) : (
                     <Copy className="w-4 h-4" />

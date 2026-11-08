@@ -40,7 +40,7 @@ async function createResume() {
   });
 
   // Contact Strip
-  page.drawText('Location: Dubai, UAE  |  Email: syedumairshah763@gmail.com  |  Portfolio: syedumairshah.dev', {
+  page.drawText('Location: Islamabad, Pakistan  |  Phone: +92 313 9837430  |  Email: syedumairshah763@gmail.com', {
     x: 40,
     y: height - 85,
     size: 9,
@@ -83,7 +83,7 @@ async function createResume() {
   // Technical & Operational Skills
   drawSectionHeading('Core Technical & Operational Competencies');
   const skillLines = [
-    '• Software & Web Dev: HTML5, CSS3, JavaScript, React.js, Next.js, C#, SQL, REST APIs, Git',
+    '• Software & Web Dev: HTML5, CSS3, JavaScript, React.js, Next.js, C++, SQL, REST APIs, Git',
     '• Systems & IT Infrastructure: Windows Support, Linux, Active Directory, Microsoft 365, TCP/IP, Hardware/Software Triage',
     '• Aviation & CX: Airport Operations, Departure Control Systems (DCS), Boarding Logistics, VIP Al Majlis Care, De-escalation',
   ];
@@ -123,7 +123,7 @@ async function createResume() {
       period: '2020 – 2022',
       bullets: [
         'Provided responsive Tier 1/2 technical support across Windows, Linux, and network appliances.',
-        'Engineered internal software and web modules using modern front-end frameworks, C#, and SQL.',
+        'Engineered internal software and web modules using modern frameworks, C++, and SQL.',
         'Administered Active Directory domains: user provisioning, security policies, and GPO management.',
       ],
     },
