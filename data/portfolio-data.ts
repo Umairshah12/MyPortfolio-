@@ -29,7 +29,7 @@ export const PERSONAL_INFO = {
   location: 'Dubai, United Arab Emirates',
   locationDetails: 'Open to on-site, hybrid & international relocation opportunities',
   availability: 'Available for Immediate Engagement',
-  email: 'syed.umair.shah@example.com', // Editable placeholder
+  email: 'syedumairshah763@gmail.com',
   phone: '+971 50 000 0000', // Editable placeholder
   cvPath: '/resume.pdf',
 };
@@ -49,9 +49,9 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     name: 'Email',
-    url: 'mailto:syed.umair.shah@example.com',
+    url: 'mailto:syedumairshah763@gmail.com',
     icon: 'Mail',
-    username: 'syed.umair.shah@example.com',
+    username: 'syedumairshah763@gmail.com',
   },
 ];
 
@@ -178,132 +178,7 @@ export const EXPERIENCES: ExperienceItem[] = [
   },
 ];
 
-export const PROJECTS: ProjectItem[] = [
-  {
-    id: 'aeropulse-dashboard',
-    title: 'AeroPulse – Airline Operations & Passenger Flow System',
-    category: 'web',
-    categoryLabel: 'Web Development',
-    shortDescription:
-      'Real-time airport terminal monitoring and passenger transit coordination platform with live flight telemetry and turnaround tracking.',
-    fullDescription:
-      'AeroPulse is an enterprise-grade airport operations platform designed to bridge ground operations with passenger flow monitoring. Built with Next.js App Router, TypeScript, and Tailwind CSS, it visualizes gate allocation, passenger transit bottlenecks, on-time performance metrics, and crew notifications.',
-    image: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=1200&q=80',
-    techStack: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'WebSockets'],
-    liveUrl: 'https://aeropulse-demo.vercel.app',
-    githubUrl: 'https://github.com/syedumairshah/aeropulse-operations-suite',
-    featured: true,
-    highlights: [
-      'Interactive radar & gate turnaround visualizer',
-      'Real-time passenger connection risk scoring',
-      'Role-based views for Gate Leads and Duty Managers',
-      'Zero-latency alert notification pipeline',
-    ],
-  },
-  {
-    id: 'omnidesk-asset-tracker',
-    title: 'OmniDesk – Enterprise IT Asset & Ticket Management',
-    category: 'software',
-    categoryLabel: 'Software Development',
-    shortDescription:
-      'Full-stack IT support portal featuring automated hardware lifecycle tracking, Active Directory synchronization, and incident resolution workflows.',
-    fullDescription:
-      'Designed to streamline corporate IT helpdesks, OmniDesk merges hardware asset auditing with automated ticketing queues. Built with C# .NET Core, SQL relational databases, and a modern responsive dashboard, it reduces mean time to resolution (MTTR) while maintaining strict audit trails.',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1200&q=80',
-    techStack: ['C# .NET', 'SQL Server', 'React', 'Tailwind CSS', 'REST API'],
-    liveUrl: 'https://omnidesk-it.vercel.app',
-    githubUrl: 'https://github.com/syedumairshah/omnidesk-asset-manager',
-    featured: true,
-    highlights: [
-      'Automated hardware warranty and deprecation scheduler',
-      'Active Directory user-to-workstation mapping',
-      'Interactive SLA dashboard with drill-down metrics',
-      'Encrypted audit trails for compliance validation',
-    ],
-  },
-  {
-    id: 'securenet-infrastructure',
-    title: 'SecureNet Core – Multi-Branch Enterprise Network & AD Blueprint',
-    category: 'it-solutions',
-    categoryLabel: 'IT Solutions',
-    shortDescription:
-      'Architectural blueprint and automation scripts for deploying secure hybrid Active Directory, VPN tunnels, and Microsoft 365 cloud governance.',
-    fullDescription:
-      'A comprehensive infrastructure deployment package engineered for growing multi-site organizations. Includes automated PowerShell provisioning scripts, hardened Group Policy Object (GPO) baselines, automated backup routines, and dual-factor VPN security policies.',
-    image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1200&q=80',
-    techStack: ['Active Directory', 'Windows Server', 'PowerShell', 'Microsoft 365', 'Cisco / MikroTik'],
-    liveUrl: 'https://github.com/syedumairshah/securenet-infrastructure-blueprint',
-    githubUrl: 'https://github.com/syedumairshah/securenet-infrastructure-blueprint',
-    featured: true,
-    highlights: [
-      'Automated PowerShell onboarding script suite',
-      'Zero-trust network segmentation and VLAN zoning',
-      'Hybrid Azure AD sync deployment guide',
-      'Automated backup verification test harness',
-    ],
-  },
-  {
-    id: 'lumina-wayfinding-ux',
-    title: 'Lumina – Airport Terminal Digital Wayfinding Experience',
-    category: 'creative',
-    categoryLabel: 'Creative Projects',
-    shortDescription:
-      'Intuitive interactive 3D wayfinding portal for airport passengers navigating duty-free concourses, gates, and VIP lounges.',
-    fullDescription:
-      'An award-inspired digital kiosk experience designed to simplify airport terminal navigation. Features smooth interactive floor plans, walking time calculators tailored for passengers with tight connections, and localized multilingual prompts.',
-    image: 'https://images.unsplash.com/photo-1508873696983-2df5703bc225?auto=format&fit=crop&w=1200&q=80',
-    techStack: ['React', 'Three.js / WebGL', 'Framer Motion', 'Tailwind CSS'],
-    liveUrl: 'https://lumina-wayfinding.vercel.app',
-    githubUrl: 'https://github.com/syedumairshah/lumina-airport-wayfinding',
-    featured: false,
-    highlights: [
-      'Interactive 3D concourse rendering with step-by-step pathfinding',
-      'Live boarding countdown and gate distance calculator',
-      'Full WCAG 2.1 AA accessibility compliance',
-      'Instant language switching (English, Arabic, Hindi, Mandarin)',
-    ],
-  },
-  {
-    id: 'cloudsync-backup-engine',
-    title: 'CloudSync Pro – Secure Incremental Backup Agent',
-    category: 'software',
-    categoryLabel: 'Software Development',
-    shortDescription:
-      'Lightweight background service for encrypted off-site backup synchronization with bandwidth throttling and anomaly detection.',
-    fullDescription:
-      'Built to provide resilient data protection for remote staff and branch offices. Features AES-256 local encryption before transfer, chunk-level deduplication, and an administrative health monitor.',
-    image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1200&q=80',
-    techStack: ['C#', '.NET Core', 'SQLite', 'Azure Blob Storage', 'WPF'],
-    liveUrl: 'https://github.com/syedumairshah/cloudsync-backup-engine',
-    githubUrl: 'https://github.com/syedumairshah/cloudsync-backup-engine',
-    featured: false,
-    highlights: [
-      'Block-level delta transfers saving 80% network overhead',
-      'Automated silent background execution with low CPU footprint',
-      'Instant administrative Slack / Teams alert webhooks',
-    ],
-  },
-  {
-    id: 'devfolio-luxury-experience',
-    title: 'Apex – Editorial Luxury Portfolio Framework',
-    category: 'web',
-    categoryLabel: 'Web Development',
-    shortDescription:
-      'Ultra-high performance, Awwwards-inspired modern portfolio template featuring fluid physics animations, dynamic glassmorphism, and SEO mastery.',
-    fullDescription:
-      'Crafted with Next.js 14, Framer Motion, and Tailwind CSS. Showcases how editorial typography and dark-mode luminescence combine to deliver a museum-grade digital presentation.',
-    image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=1200&q=80',
-    techStack: ['Next.js 14', 'TypeScript', 'Tailwind CSS', 'Framer Motion'],
-    liveUrl: 'https://syedumairshah.vercel.app',
-    githubUrl: 'https://github.com/syedumairshah/syed-umair-shah-portfolio',
-    featured: false,
-    highlights: [
-      '100/100 Google Lighthouse performance score target',
-      'Granular dynamic accent color switcher',
-      'Fully responsive fluid typography and grid system',
-    ],
-  },
-];
+export const PROJECTS: ProjectItem[] = [];
 
 export const EDUCATION_DATA: EducationItem[] = [
   {

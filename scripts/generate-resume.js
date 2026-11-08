@@ -40,7 +40,7 @@ async function createResume() {
   });
 
   // Contact Strip
-  page.drawText('Location: Dubai, UAE  |  Email: syed.umair.shah@example.com  |  Portfolio: syedumairshah.dev', {
+  page.drawText('Location: Dubai, UAE  |  Email: syedumairshah763@gmail.com  |  Portfolio: syedumairshah.dev', {
     x: 40,
     y: height - 85,
     size: 9,

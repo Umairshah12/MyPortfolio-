@@ -186,32 +186,27 @@ export default function Hero() {
                 </div>
 
                 {/* Profile Avatar Frame / Cinematic Graphic */}
-                <div className="relative my-6 aspect-square rounded-2xl overflow-hidden glass-panel border border-white/10 flex flex-col items-center justify-center p-6 bg-gradient-to-br from-navy-900 via-navy-850 to-slate-950 group">
-                  {/* Background grid inside avatar container */}
-                  <div className="absolute inset-0 bg-grid-pattern opacity-40" />
-
-                  {/* Geometric Monogram Emblem */}
-                  <div className="relative z-10 w-32 h-32 rounded-2xl glass-panel border border-cyan-400/40 flex items-center justify-center shadow-glow-cyan mb-4 group-hover:scale-105 transition-transform duration-500">
-                    <div className="text-4xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-tr from-cyan-300 via-blue-400 to-purple-400">
-                      SUS
-                    </div>
-                    {/* Concentric rotating rings */}
-                    <div className="absolute -inset-2 rounded-2xl border border-cyan-400/20 animate-spin-slow" />
-                  </div>
-
-                  <span className="relative z-10 text-base font-bold text-white tracking-wide">
-                    Syed Umair Shah
-                  </span>
-                  <span className="relative z-10 text-xs font-mono text-cyan-400/90 mt-1">
-                    [Photo Placeholder Ready]
-                  </span>
-                  <p className="relative z-10 text-[11px] text-slate-400 text-center mt-2 max-w-xs">
-                    Drop your professional headshot into <code className="text-cyan-300">/public/avatar.jpg</code>
-                  </p>
+                <div className="relative my-6 aspect-square rounded-2xl overflow-hidden glass-panel border border-white/10 flex flex-col items-center justify-center bg-gradient-to-br from-navy-900 via-navy-850 to-slate-950 group">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/profile.png"
+                    alt={PERSONAL_INFO.name}
+                    className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#040711] via-transparent to-transparent" />
 
                   {/* Corner Accent Badges */}
-                  <div className="absolute top-3 right-3 p-1.5 rounded-lg glass-panel border border-white/10">
+                  <div className="absolute top-3 right-3 p-1.5 rounded-lg glass-panel border border-white/10 bg-black/60 backdrop-blur-md">
                     <ShieldCheck className="w-4 h-4 text-emerald-400" />
+                  </div>
+
+                  {/* Identification Pill */}
+                  <div className="absolute bottom-3 left-3 right-3 p-2.5 rounded-xl glass-panel border border-white/10 bg-black/70 backdrop-blur-md flex items-center justify-between">
+                    <div>
+                      <div className="text-xs font-bold text-white">{PERSONAL_INFO.name}</div>
+                      <div className="text-[10px] font-mono text-cyan-400">IT &amp; Aviation Professional</div>
+                    </div>
+                    <span className="text-[10px] font-mono px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-300 border border-emerald-500/30">Active</span>
                   </div>
                 </div>
 

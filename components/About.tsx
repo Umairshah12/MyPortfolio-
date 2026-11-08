@@ -81,35 +81,33 @@ export default function About() {
           >
             {/* Visual Headshot / ID Frame */}
             <div className="relative rounded-3xl glass-card p-6 border border-white/10 overflow-hidden shadow-2xl">
-              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden glass-panel border border-white/10 bg-gradient-to-br from-slate-900 via-navy-900 to-slate-950 flex flex-col items-center justify-center p-6 text-center">
-                <div className="absolute inset-0 bg-grid-pattern opacity-30" />
-                
-                {/* Monogram / Placeholder Avatar Box */}
-                <div className="relative z-10 w-28 h-28 rounded-2xl glass-panel border border-cyan-400/30 flex items-center justify-center shadow-glow-cyan mb-4">
-                  <span className="text-3xl font-black text-transparent bg-clip-text bg-gradient-to-tr from-cyan-400 to-purple-400">
-                    {PERSONAL_INFO.initials}
-                  </span>
+              <div className="relative aspect-[4/5] rounded-2xl overflow-hidden glass-panel border border-white/10 bg-gradient-to-br from-slate-900 via-navy-900 to-slate-950 group">
+                {/* Real User Profile Picture */}
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src="/profile.png"
+                  alt={PERSONAL_INFO.name}
+                  className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-700"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#040711] via-[#040711]/25 to-transparent" />
+
+                {/* Verified ID Floating Badge */}
+                <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full glass-panel border border-cyan-400/30 text-[10px] font-mono text-cyan-300 flex items-center space-x-1.5 shadow-glow-cyan bg-black/50 backdrop-blur-md">
+                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span>Verified Identity</span>
                 </div>
 
-                <h3 className="relative z-10 text-xl font-bold text-white mb-1">
-                  {PERSONAL_INFO.name}
-                </h3>
-                <p className="relative z-10 text-xs text-cyan-400 font-mono mb-4">
-                  Professional Profile Placeholder
-                </p>
-
-                <div className="relative z-10 w-full p-3 rounded-xl glass-panel border border-white/5 text-left text-xs space-y-1.5">
-                  <div className="flex justify-between text-slate-400">
-                    <span>Base Location:</span>
-                    <span className="text-white font-medium">Dubai, UAE</span>
-                  </div>
-                  <div className="flex justify-between text-slate-400">
-                    <span>Degree:</span>
-                    <span className="text-white font-medium">BS Information Tech</span>
-                  </div>
-                  <div className="flex justify-between text-slate-400">
-                    <span>Aviation Hubs:</span>
-                    <span className="text-white font-medium">DXB &amp; AUH (Etihad)</span>
+                {/* Bottom details overlay */}
+                <div className="absolute bottom-3 left-3 right-3 p-3.5 rounded-xl glass-panel border border-white/10 bg-black/60 backdrop-blur-md text-left">
+                  <h3 className="text-base font-bold text-white leading-tight">
+                    {PERSONAL_INFO.name}
+                  </h3>
+                  <p className="text-[11px] text-cyan-400 font-mono mt-0.5">
+                    IT Support Specialist • Software Developer
+                  </p>
+                  <div className="mt-2 pt-2 border-t border-white/10 flex items-center justify-between text-[10px] text-slate-300 font-mono">
+                    <span>Dubai, UAE</span>
+                    <span>Etihad &amp; DXB Ops</span>
                   </div>
                 </div>
               </div>
