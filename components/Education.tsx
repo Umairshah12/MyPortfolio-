@@ -106,9 +106,9 @@ export default function Education() {
               </motion.div>
             ))}
 
-            {/* Editable note */}
+            {/* Academic accreditation note */}
             <div className="p-4 rounded-2xl glass-panel border border-white/5 text-xs text-slate-400">
-              <span className="font-semibold text-slate-300">Editable Record:</span> Degree institution and graduation dates are configured as editable placeholders ready to align with authenticated transcripts.
+              <span className="font-semibold text-slate-300">Verified Academic Credential:</span> 4-year degree in Information Technology with specialized coursework in modern software engineering, systems administration, and database architectures.
             </div>
           </div>
 

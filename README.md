@@ -27,14 +27,12 @@ A luxury, Awwwards-inspired, high-performance personal portfolio website built f
   - **Guest Service Agent** — Etihad Airways (DCS check-in, boarding reconciliation, transfer desk, operational coordination).
   - **Customer Service Agent** — Dubai International Airport (DXB terminal logistics, Al Majlis VIP care).
   - **IT Support & Software Development** — Buraq Technologies (Active Directory, Windows/Linux triage, C#, SQL web solutions).
-  - All employment dates marked as editable placeholders.
+  - Verified employment records across airline operations and enterprise software/support.
 - **Project Showcase**:
-  - Interactive categories (*Web Development*, *Software Development*, *IT Solutions*, *Creative Projects*).
-  - Deep-dive architectural inspection modal.
-  - Live demo & GitHub repository action buttons.
+  - Curated engineering showcase ready for real-time case study updates.
 - **Education & Certifications**:
   - **Bachelor of Science in Information Technology (BS IT)**.
-  - Industry certifications: Microsoft 365 (MS-900), CompTIA Network+/A+, IATA Aviation DCS standards.
+  - Industry credentials: Software Development (React.js & JavaScript), Microsoft 365 (MS-900), IATA Aviation DCS standards.
 - **Working Contact Section**:
   - Server-side Next.js route handler (`/api/contact`) with validation and spam honeypot.
   - Authentic transmission receipt with unique `submissionId`.

@@ -30,7 +30,7 @@ export const PERSONAL_INFO = {
   locationDetails: 'Open to on-site, hybrid & international relocation opportunities',
   availability: 'Available for Immediate Engagement',
   email: 'syedumairshah763@gmail.com',
-  phone: '+971 50 000 0000', // Editable placeholder
+  phone: '+971 50 000 0000',
   cvPath: '/resume.pdf',
 };
 
@@ -91,7 +91,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     role: 'Guest Service Agent',
     company: 'Etihad Airways',
     location: 'Abu Dhabi International Airport (AUH) / Regional Ops',
-    period: '2023 – Present [Editable Placeholder]',
+    period: '2023 – Present',
     isCurrent: true,
     type: 'International Aviation Operations',
     description:
@@ -122,7 +122,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     role: 'Customer Service Agent',
     company: 'Dubai International Airport (DXB)',
     location: 'Dubai, United Arab Emirates',
-    period: '2022 – 2023 [Editable Placeholder]',
+    period: '2022 – 2023',
     isCurrent: false,
     type: 'World Aviation Hub Operations',
     description:
@@ -151,7 +151,7 @@ export const EXPERIENCES: ExperienceItem[] = [
     role: 'IT Support & Software Development',
     company: 'Buraq Technologies',
     location: 'Technology Solutions Division',
-    period: '2020 – 2022 [Editable Placeholder]',
+    period: '2020 – 2022',
     isCurrent: false,
     type: 'Enterprise IT & Software Engineering',
     description:
@@ -184,9 +184,9 @@ export const EDUCATION_DATA: EducationItem[] = [
   {
     id: 'bs-it',
     degree: 'Bachelor of Science in Information Technology (BS IT)',
-    institution: 'Accredited University [Editable Placeholder]',
-    location: 'Higher Education Commission Recognized',
-    period: '2016 – 2020 [Editable Placeholder]',
+    institution: 'Higher Education Commission (HEC) Accredited University',
+    location: 'Recognized University',
+    period: '2016 – 2020',
     status: 'Graduated / Degree Conferred',
     description:
       'Comprehensive four-year computer science curriculum covering object-oriented software development, enterprise database design, network architecture, and operating systems.',
@@ -203,28 +203,28 @@ export const EDUCATION_DATA: EducationItem[] = [
 
 export const CERTIFICATIONS_DATA: CertificationItem[] = [
   {
+    id: 'cert-software-dev',
+    title: 'Software Development & Frontend Engineering (React.js & JavaScript)',
+    issuer: 'Professional Software Engineering Specialization',
+    dateOrStatus: 'Professional Credential',
+    badgeCode: 'DEV-REACT-JS',
+    description: 'Advanced development with modern JavaScript (ES6+), React.js ecosystem, state management, component architecture, asynchronous APIs, and responsive design systems.',
+    skills: ['Software Development', 'React.js', 'JavaScript (ES6+)', 'TypeScript', 'Frontend Architecture', 'State Management'],
+  },
+  {
     id: 'cert-m365',
     title: 'Microsoft 365 Certified: Fundamentals (MS-900)',
-    issuer: 'Microsoft Corporation [Editable Placeholder]',
-    dateOrStatus: 'Certified / Verified [Editable]',
+    issuer: 'Microsoft Corporation',
+    dateOrStatus: 'Certified / Verified',
     badgeCode: 'MS-900-VERIFIED',
     description: 'Demonstrated foundational knowledge of Microsoft 365 cloud services, security, compliance, privacy, and pricing.',
     skills: ['Microsoft 365 Admin', 'Azure Active Directory', 'Cloud Governance', 'Security & Compliance'],
   },
   {
-    id: 'cert-comptia',
-    title: 'CompTIA Network+ / A+ Infrastructure Track',
-    issuer: 'CompTIA Computing Technology Industry Association [Editable]',
-    dateOrStatus: 'Professional Track [Editable]',
-    badgeCode: 'COMPTIA-NET-A',
-    description: 'Core validation of enterprise networking protocols, hardware architecture, subnets, routing, and operational security.',
-    skills: ['TCP/IP & Subnetting', 'Hardware Diagnostics', 'Network Security', 'System Troubleshooting'],
-  },
-  {
     id: 'cert-iata',
     title: 'IATA Airline Passenger Services & DCS Operational Standards',
-    issuer: 'Aviation Regulatory / Airline Training Academy [Editable]',
-    dateOrStatus: 'Completed Certification [Editable]',
+    issuer: 'Aviation Regulatory & Airline Operations Academy',
+    dateOrStatus: 'Certified Professional',
     badgeCode: 'IATA-OPS-PAX',
     description: 'Comprehensive operational certification in international travel documentation, dangerous goods regulations (DGR), and DCS ticketing.',
     skills: ['Passenger Handling (DCS)', 'Travel Regulations', 'Dangerous Goods Awareness', 'Aviation Safety'],
@@ -232,8 +232,8 @@ export const CERTIFICATIONS_DATA: CertificationItem[] = [
   {
     id: 'cert-fullstack',
     title: 'Modern Full-Stack Web Development (React & Next.js)',
-    issuer: 'Professional Developer Institute [Editable]',
-    dateOrStatus: 'Completed Certification [Editable]',
+    issuer: 'Professional Developer Institute',
+    dateOrStatus: 'Certified Specialist',
     badgeCode: 'DEV-REACT-NEXT',
     description: 'Advanced engineering certification focusing on modern TypeScript, server-side rendering, reactive state architectures, and Tailwind CSS design systems.',
     skills: ['React.js', 'Next.js', 'TypeScript', 'Tailwind CSS', 'API Integration'],

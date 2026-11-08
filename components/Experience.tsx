@@ -183,10 +183,6 @@ export default function Experience() {
           })}
         </div>
 
-        {/* Date Placeholders Notice */}
-        <div className="mt-12 p-4 rounded-xl glass-panel border border-white/5 text-center text-xs text-slate-500 max-w-xl mx-auto font-mono">
-          Note: Employment dates and locations remain fully editable placeholders to reflect verified records upon onboarding.
-        </div>
 
       </div>
     </section>

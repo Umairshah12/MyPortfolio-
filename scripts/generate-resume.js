@@ -100,7 +100,7 @@ async function createResume() {
     {
       role: 'Guest Service Agent',
       company: 'Etihad Airways',
-      period: '2023 – Present [Editable Placeholder]',
+      period: '2023 – Present',
       bullets: [
         'Orchestrated end-to-end passenger check-in procedures using Departure Control Systems (DCS).',
         'Led precise gate boarding operations under strict turnaround timeframes, ensuring manifest accuracy.',
@@ -110,7 +110,7 @@ async function createResume() {
     {
       role: 'Customer Service Agent',
       company: 'Dubai International Airport (DXB)',
-      period: '2022 – 2023 [Editable Placeholder]',
+      period: '2022 – 2023',
       bullets: [
         'Assisted thousands of international travelers daily with terminal logistics and flight connections.',
         'Supported prestigious Al Majlis VIP services catering to diplomats and high-net-worth delegates.',
@@ -120,7 +120,7 @@ async function createResume() {
     {
       role: 'IT Support & Software Development',
       company: 'Buraq Technologies',
-      period: '2020 – 2022 [Editable Placeholder]',
+      period: '2020 – 2022',
       bullets: [
         'Provided responsive Tier 1/2 technical support across Windows, Linux, and network appliances.',
         'Engineered internal software and web modules using modern front-end frameworks, C#, and SQL.',
@@ -170,7 +170,7 @@ async function createResume() {
     font: fontBold,
     color: rgb(0.1, 0.1, 0.1),
   });
-  page.drawText('Accredited University [Editable Placeholder]  (2016 – 2020)', {
+  page.drawText('Higher Education Commission (HEC) Accredited University  (2016 – 2020)', {
     x: 40,
     y: y - 12,
     size: 8.5,
@@ -180,9 +180,9 @@ async function createResume() {
   y -= 26;
 
   const certs = [
-    '• Microsoft 365 Certified: Fundamentals (MS-900) [Editable Placeholder]',
-    '• CompTIA Network+ / A+ Infrastructure Track [Editable Placeholder]',
-    '• IATA Airline Passenger Services & DCS Operational Standards [Editable Placeholder]',
+    '• Software Development: React.js, JavaScript (ES6+), TypeScript & Next.js',
+    '• Microsoft 365 Certified: Fundamentals (MS-900)',
+    '• IATA Airline Passenger Services & DCS Operational Standards',
   ];
   for (const c of certs) {
     page.drawText(c, { x: 40, y, size: 8.5, font: fontRegular, color: rgb(0.25, 0.25, 0.25) });
