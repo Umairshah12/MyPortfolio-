@@ -43,9 +43,9 @@ export const SOCIAL_LINKS: SocialLink[] = [
   },
   {
     name: 'GitHub',
-    url: 'https://github.com/syedumairshah',
+    url: 'https://github.com/Umairshah12',
     icon: 'Github',
-    username: 'github.com/syedumairshah',
+    username: 'github.com/Umairshah12',
   },
   {
     name: 'Email',
