@@ -37,9 +37,9 @@ export const PERSONAL_INFO = {
 export const SOCIAL_LINKS: SocialLink[] = [
   {
     name: 'LinkedIn',
-    url: 'https://linkedin.com/in/syed-umair-shah',
+    url: 'https://www.linkedin.com/in/syed-umair-shah-66b92a19b/',
     icon: 'Linkedin',
-    username: 'linkedin.com/in/syed-umair-shah',
+    username: 'linkedin.com/in/syed-umair-shah-66b92a19b',
   },
   {
     name: 'GitHub',
@@ -64,7 +64,7 @@ export const TECHNICAL_SKILLS: Skill[] = [
   { name: 'CSS3 / Tailwind', category: 'development', icon: 'Palette', level: 'Advanced', context: 'Responsive design, animations & modern utility CSS' },
   { name: 'C++', category: 'development', icon: 'Cpu', level: 'Proficient', highlight: true, context: 'Object-oriented programming, data structures, algorithms & high-performance logic' },
   { name: 'SQL', category: 'development', icon: 'Database', level: 'Proficient', context: 'Relational schema design, queries, joins & optimization' },
-  
+
   // Systems & IT Infrastructure
   { name: 'Windows Support', category: 'systems', icon: 'Monitor', level: 'Advanced', highlight: true, context: 'Enterprise OS troubleshooting, registry & deployment' },
   { name: 'Linux', category: 'systems', icon: 'Terminal', level: 'Proficient', context: 'Shell navigation, permissions & server configuration' },

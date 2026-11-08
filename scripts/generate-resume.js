@@ -40,10 +40,10 @@ async function createResume() {
   });
 
   // Contact Strip
-  page.drawText('Location: Islamabad, Pakistan  |  Phone: +92 313 9837430  |  Email: syedumairshah763@gmail.com', {
+  page.drawText('Islamabad, PK  |  +92 313 9837430  |  syedumairshah763@gmail.com  |  linkedin.com/in/syed-umair-shah-66b92a19b', {
     x: 40,
     y: height - 85,
-    size: 9,
+    size: 8.5,
     font: fontRegular,
     color: rgb(0.65, 0.75, 0.85),
   });
